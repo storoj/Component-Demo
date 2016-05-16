@@ -11,6 +11,8 @@
 		3250A9411C22E70A00CF5A0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3250A9401C22E70A00CF5A0A /* AppDelegate.m */; };
 		3250A9491C22E70A00CF5A0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3250A9481C22E70A00CF5A0A /* Assets.xcassets */; };
 		3250A94C1C22E70A00CF5A0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3250A94A1C22E70A00CF5A0A /* LaunchScreen.storyboard */; };
+		327C621B1CC5AC3B00C5591A /* Component5CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C621A1CC5AC3B00C5591A /* Component5CollectionView.m */; };
+		327C621E1CC5AD8200C5591A /* DemoViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C621D1CC5AD8200C5591A /* DemoViewController4.m */; };
 		CAD4211627371A06A911BFCE /* poll_voted_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAD4214A7492DDEDF199A381 /* poll_voted_check@2x.png */; };
 		CAD421229AE60CC39F3C2475 /* 7_repost_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CAD420B87C08CB29A0969466 /* 7_repost_icon@3x.png */; };
 		CAD4213093852620BFF478D9 /* texts.json in Resources */ = {isa = PBXBuildFile; fileRef = CAD42C2E6683B30BAB9F9FAF /* texts.json */; };
@@ -82,6 +84,10 @@
 		3250A9481C22E70A00CF5A0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3250A94B1C22E70A00CF5A0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3250A94D1C22E70A00CF5A0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		327C62191CC5AC3B00C5591A /* Component5CollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component5CollectionView.h; sourceTree = "<group>"; };
+		327C621A1CC5AC3B00C5591A /* Component5CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Component5CollectionView.m; sourceTree = "<group>"; };
+		327C621C1CC5AD8200C5591A /* DemoViewController4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController4.h; sourceTree = "<group>"; };
+		327C621D1CC5AD8200C5591A /* DemoViewController4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController4.m; sourceTree = "<group>"; };
 		CAD42054E114D11FDE43BE4A /* 7_user_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7_user_placeholder@2x.png"; sourceTree = "<group>"; };
 		CAD4209E0CEA42CACEB832AC /* DemoViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController3.h; sourceTree = "<group>"; };
 		CAD420AC2AF48F36D2C24B1E /* RenderedText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderedText.m; sourceTree = "<group>"; };
@@ -309,6 +315,8 @@
 				CAD42AD208E51ECB9A762637 /* SourceComponent.h */,
 				CAD4261867AA8C4B7DBBB24B /* FutureComponent.m */,
 				CAD423F7E31735F1180D51B4 /* FutureComponent.h */,
+				327C62191CC5AC3B00C5591A /* Component5CollectionView.h */,
+				327C621A1CC5AC3B00C5591A /* Component5CollectionView.m */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -355,6 +363,8 @@
 				CAD4209E0CEA42CACEB832AC /* DemoViewController3.h */,
 				CAD4277F5E89C48503289929 /* RootViewController.m */,
 				CAD42A1EC46058244C72802E /* RootViewController.h */,
+				327C621C1CC5AD8200C5591A /* DemoViewController4.h */,
+				327C621D1CC5AD8200C5591A /* DemoViewController4.m */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -490,6 +500,7 @@
 				CAD4274FB46E6C7AC3D3CC93 /* RenderedTextLabel.m in Sources */,
 				CAD42648721988F7CDF75D39 /* DemoViewController2.m in Sources */,
 				CAD42A32031799068A4B8F94 /* InsetComponent.m in Sources */,
+				327C621E1CC5AD8200C5591A /* DemoViewController4.m in Sources */,
 				CAD429873DC07A26D1D5C4B2 /* ImageComponent.m in Sources */,
 				CAD423A1ED0BF35B764C332E /* DemoViewController3.m in Sources */,
 				CAD423BEAE5D7CA930EB9526 /* Post.m in Sources */,
@@ -497,6 +508,7 @@
 				CAD42884EFE43D5B8F18BC83 /* Colors.m in Sources */,
 				CAD422A768613B158491D114 /* TextStyle.m in Sources */,
 				CAD42F9445A4CE60296577BE /* Dimensions.m in Sources */,
+				327C621B1CC5AC3B00C5591A /* Component5CollectionView.m in Sources */,
 				CAD4296E93580261650E1F88 /* StyleSheet.m in Sources */,
 				CAD42E10E17B27A92F484CAE /* FutureComponent.m in Sources */,
 				CAD42AEE39CE4D31F24443EB /* RootViewController.m in Sources */,
@@ -638,6 +650,7 @@
 				3250A9521C22E70A00CF5A0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

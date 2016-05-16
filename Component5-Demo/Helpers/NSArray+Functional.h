@@ -7,4 +7,5 @@
 
 @interface NSArray <T> (Functional)
 - (NSArray *)map:(id(^)(T obj))block;
+- (void)each:(void(^)(T obj))block;
 @end

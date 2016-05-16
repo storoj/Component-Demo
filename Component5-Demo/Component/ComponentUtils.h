@@ -8,3 +8,4 @@
 extern void NodeAddToViewDemo1(UIView *host, NSArray <NodeChild *> *nodes);
 extern void NodeAddToViewDemo2(UIView *host, NSArray <NodeChild *> *nodes);
 extern void NodeAddToView(UIView *host, NSArray <NodeChild *> *nodes);
+extern void NodeSimplifyVisitorBlock(Node *node, CGPoint origin, void(^block)(Node *node, CGPoint origin));

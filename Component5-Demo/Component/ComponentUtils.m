@@ -5,19 +5,20 @@
 
 #import "ComponentUtils.h"
 #import "UIView+ComponentController.h"
+#import "NSArray+Functional.h"
 
-static void NodeSimplifyVisitor(Node *node, CGPoint origin, NSMutableArray <NodeChild *> *acc)
+void NodeSimplifyVisitorBlock(Node *node, CGPoint origin, void(^block)(Node *node, CGPoint origin))
 {
     if ([node isDynamic]) {
         node = [node.component nodeForContext:node.componentContext];
     }
-
+    
     if ([node isUtility]) {
         for (NodeChild *child in node.children) {
-            NodeSimplifyVisitor(child.node, CGPointAddPoint(origin, child.origin), acc);
+            NodeSimplifyVisitorBlock(child.node, CGPointAddPoint(origin, child.origin), block);
         };
     } else {
-        [acc addObject:[NodeChild childWithNode:node atPoint:origin]];
+        block(node, origin);
     }
 }
 
@@ -51,30 +52,27 @@ void NodeAddToViewDemo2(UIView *host, NSArray <NodeChild *> *nodes) {
         }
     }
 
-    NSMutableArray *children = [NSMutableArray array];
     for (NodeChild *child in nodes) {
-        NodeSimplifyVisitor(child.node, child.origin, children);
-    }
+        NodeSimplifyVisitorBlock(child.node, child.origin, ^(Node *node, CGPoint origin){
+            
+            Class controllerClass = [[node.component class] controllerClass];
+            if (controllerClass) {
+                UIView *view = [controllerClass createView];
+                ComponentController *controller = [(ComponentController *)[controllerClass alloc] initWithView:view];
+                
+                [controller updateWithNode:node];
+                
+                view.layer.borderWidth = 0;
+                view.layer.borderColor = [[[UIColor redColor] colorWithAlphaComponent:0.7] CGColor];
+                
+                view.frame = (CGRect){ .origin = origin, .size = node.size };
+                
+                [host addSubview:view];
+                
+                NodeAddToViewDemo2(view, node.children);
+            }
 
-    for (NodeChild *child in children) {
-        Node *node = child.node;
-
-        Class controllerClass = [[node.component class] controllerClass];
-        if (controllerClass) {
-            UIView *view = [controllerClass createView];
-            ComponentController *controller = [(ComponentController *)[controllerClass alloc] initWithView:view];
-
-            [controller updateWithNode:node];
-
-            view.layer.borderWidth = 0;
-            view.layer.borderColor = [[[UIColor redColor] colorWithAlphaComponent:0.7] CGColor];
-
-            view.frame = (CGRect){ .origin = child.origin, .size = node.size };
-
-            [host addSubview:view];
-
-            NodeAddToViewDemo2(view, node.children);
-        }
+        });
     }
 }
 

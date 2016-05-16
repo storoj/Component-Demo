@@ -7,11 +7,13 @@
 #import "DemoViewController1.h"
 #import "DemoViewController2.h"
 #import "DemoViewController3.h"
+#import "DemoViewController4.h"
 
 typedef NS_ENUM(NSInteger, MenuOption) {
     MenuOptionWireframes,
     MenuOptionTextList,
     MenuOptionComplex,
+    MenuOptionCollectionView,
 
     MenuOptionCount
 };
@@ -26,6 +28,9 @@ static NSString *NSStringFromMenuOption(MenuOption option) {
 
         case MenuOptionComplex:
             return @"Complex";
+            
+        case MenuOptionCollectionView:
+            return @"CollectionView";
 
         case MenuOptionCount:
             return nil;
@@ -84,6 +89,9 @@ static NSString *NSStringFromMenuOption(MenuOption option) {
         case MenuOptionComplex:
             vc = [DemoViewController3 new];
             break;
+            
+        case MenuOptionCollectionView:
+            vc = [DemoViewController4 new];
 
         case MenuOptionCount:
             break;

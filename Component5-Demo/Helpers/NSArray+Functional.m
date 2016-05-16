@@ -16,4 +16,10 @@
     return res;
 }
 
+- (void)each:(void (^)(id))block {
+    for (id obj in self) {
+        block(obj);
+    }
+}
+
 @end
