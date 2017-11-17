@@ -154,7 +154,7 @@
 
                     case ListComponentHorizontalAlignmentLeft:break;
                     case ListComponentHorizontalAlignmentCenter: origin.x += ceilf(dxTotal/2); break;
-                    case ListComponentHorizontalAlignmentRight: origin.x += ceilf(dyTotal); break;
+                    case ListComponentHorizontalAlignmentRight: origin.x += ceilf(dxTotal); break;
                 }
 
                 const CGFloat dy = nodeSize.height - childNodeSize.height;
